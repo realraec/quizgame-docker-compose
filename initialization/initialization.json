@@ -1,0 +1,4135 @@
+{
+	"info": {
+		"_postman_id": "830e3d75-5e17-490f-b72f-815d58ebbf4c",
+		"name": "initialization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18763805"
+	},
+	"item": [
+		{
+			"name": "/api/persons (admin)",
+			"item": [
+				{
+					"name": "/api/persons/create admin1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"P@ssW0rd1\",\r\n    \"lastname\": \"LUCAS\",\r\n    \"firstname\": \"Emilie\",\r\n    \"email\": \"emilie.lucas@gmail.com\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create admin2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin2\",\r\n    \"password\": \"P@ssW0rd2\",\r\n    \"lastname\": \"SALIGNY\",\r\n    \"firstname\": \"Thomas\",\r\n    \"email\": \"thomas.saligny@gmail.com\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create admin3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin3\",\r\n    \"password\": \"P@ssW0rd3\",\r\n    \"lastname\": \"BERNARD\",\r\n    \"firstname\": \"Louis\",\r\n    \"email\": \"louis.bernard@gmail.com\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/admins",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/persons/admins",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/persons (interns)",
+			"item": [
+				{
+					"name": "/api/persons/create intern4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern4\",\r\n    \"password\": \"P@ssW0rd1\",\r\n    \"lastname\": \"LOMPECH\",\r\n    \"firstname\": \"Thimothée\",\r\n    \"email\": \"timothée.lompech@gmail.com\",\r\n    \"company\": \"Amazon\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern5\",\r\n    \"password\": \"P@ssW0rd2\",\r\n    \"lastname\": \"GUILLAUME\",\r\n    \"firstname\": \"Mathias\",\r\n    \"email\": \"mathias.guillaume@gmail.com\",\r\n    \"company\": \"Apple\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern6\",\r\n    \"password\": \"P@ssW0rd3\",\r\n    \"lastname\": \"ROYER\",\r\n    \"firstname\": \"Camille\",\r\n    \"email\": \"camille.royer@gmail.com\",\r\n    \"company\": \"Alphabet Inc.\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern7\",\r\n    \"password\": \"P@ssW0rd4\",\r\n    \"lastname\": \"PERRIN\",\r\n    \"firstname\": \"Léandre\",\r\n    \"email\": \"leandre.perrin@gmail.com\",\r\n    \"company\": \"Microsoft\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern8",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern8\",\r\n    \"password\": \"P@ssW0rd5\",\r\n    \"lastname\": \"COOLEN\",\r\n    \"firstname\": \"Marie\",\r\n    \"email\": \"marie.coolen@gmail.com\",\r\n    \"company\": \"Samsung Group\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern9",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern9\",\r\n    \"password\": \"P@ssW0rd6\",\r\n    \"lastname\": \"LECLERC\",\r\n    \"firstname\": \"Théodore\",\r\n    \"email\": \"theodore.leclerc@gmail.com\",\r\n    \"company\": \"Tencent Holdings\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern10",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern10\",\r\n    \"password\": \"P@ssW0rd7\",\r\n    \"lastname\": \"MEUNIER\",\r\n    \"firstname\": \"Célestine\",\r\n    \"email\": \"celestine.meunier@gmail.com\",\r\n    \"company\": \"Meta Platforms\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern11",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern11\",\r\n    \"password\": \"P@ssW0rd8\",\r\n    \"lastname\": \"CARPENTIER\",\r\n    \"firstname\": \"Chloé\",\r\n    \"email\": \"chloe.carpentier@gmail.com\",\r\n    \"company\": \"Cisco Systems\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/create intern12",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"intern12\",\r\n    \"password\": \"P@ssW0rd9\",\r\n    \"lastname\": \"CAUDRON\",\r\n    \"firstname\": \"Diane\",\r\n    \"email\": \"diane.caudron@gmail.com\",\r\n    \"company\": \"Oracle Corporation\",\r\n    \"role\": \"INTERN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/persons/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/persons/interns",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(9);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/persons/interns",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								"interns"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/quizzes",
+			"item": [
+				{
+					"name": "/api/quizzes/create Java",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Java\",\r\n    \"summary\": \"This quiz is about the Java programming language\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/create SQL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"SQL\",\r\n    \"summary\": \"This quiz is about the SQL programming language\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/create HTML",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"HTML\",\r\n    \"summary\": \"This quiz is about the HTML markup language\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/create CSS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"CSS\",\r\n    \"summary\": \"This quiz is about the CSS stylesheet language\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/create C",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"C\",\r\n    \"summary\": \"This quiz is about the C programming language\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/1/attributePersons/4,6,8",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/1/attributePersons/4,6,8",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"1",
+								"attributePersons",
+								"4,6,8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/2/attributePersons/4,5,7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/2/attributePersons/4,5,7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"2",
+								"attributePersons",
+								"4,5,7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/3/attributePersons/7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/3/attributePersons/7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"3",
+								"attributePersons",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes/4/attributePersons/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/quizzes/4/attributePersons/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes",
+								"4",
+								"attributePersons",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/quizzes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/quizzes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/questions",
+			"item": [
+				{
+					"name": "/api/questions/create Java-symbol",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What is the symbol used at the end of a command in Java?\",\r\n    \"maxDurationInSeconds\": 15,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create Java-OOP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What does OOP stand for?\",\r\n    \"maxDurationInSeconds\": 15,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create Java-boolean",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What are all the possible values that a boolean [as a primitive variable] can take?\",\r\n    \"maxDurationInSeconds\": 15,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create Java-IDE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What are some IDEs that can be used to write Java code?\",\r\n    \"maxDurationInSeconds\": 30,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create SQL-keywords",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What are some of the keywords that can be used in SQL queries?\",\r\n    \"maxDurationInSeconds\": 30,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create SQL-create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What command is used to create a new table in SQL?\",\r\n    \"maxDurationInSeconds\": 30,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create SQL-drop",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What does the following statement in SQL do? ```DROP TABLE customers;```\",\r\n    \"maxDurationInSeconds\": 30,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create HTML-language",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What kind of language is HTML?\",\r\n    \"maxDurationInSeconds\": 30,\r\n    \"quizId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create HTML-tag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"What is the main HTML tag that is opened at the beginning and closed at the end of every HTML file?\",\r\n    \"maxDurationInSeconds\": 15,\r\n    \"quizId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions/create CSS-stylesheet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Is CSS a stylesheet language?\",\r\n    \"maxDurationInSeconds\": 15,\r\n    \"quizId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/questions/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/questions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(10);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/answers",
+			"item": [
+				{
+					"name": "/api/answers/create Java-symbol-;",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \";\",\r\n    \"correct\": true,\r\n    \"questionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-symbol-$",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"$\",\r\n    \"correct\": false,\r\n    \"questionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-symbol-*",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"*\",\r\n    \"correct\": false,\r\n    \"questionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-symbol-#",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"#\",\r\n    \"correct\": false,\r\n    \"questionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-OOP-ObjOriPro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Object Oriented Programming\",\r\n    \"correct\": true,\r\n    \"questionId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-OOP-ObvOTTPro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Obviously Over-the-top Proposition\",\r\n    \"correct\": false,\r\n    \"questionId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-OOP-OmgOmgPls",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Ohmygod Ohmygod Please\",\r\n    \"correct\": false,\r\n    \"questionId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-OOP-OutOfPer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Out Of Perception\",\r\n    \"correct\": false,\r\n    \"questionId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-OOP-None",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"None of the above\",\r\n    \"correct\": false,\r\n    \"questionId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-boolean-true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"true\",\r\n    \"correct\": true,\r\n    \"questionId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-boolean-false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"false\",\r\n    \"correct\": true,\r\n    \"questionId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-boolean-null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"null\",\r\n    \"correct\": false,\r\n    \"questionId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-boolean-undefined",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"undefined\",\r\n    \"correct\": false,\r\n    \"questionId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-IDE-Eclipse",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Eclipse\",\r\n    \"correct\": true,\r\n    \"questionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-IDE-IntelliJ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"IntelliJ\",\r\n    \"correct\": true,\r\n    \"questionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-IDE-VSCode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Visual Studio Code\",\r\n    \"correct\": true,\r\n    \"questionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create Java-IDE-ie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Internet Explorer\",\r\n    \"correct\": false,\r\n    \"questionId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-keywords-select",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"SELECT\",\r\n    \"correct\": true,\r\n    \"questionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-keywords-draft",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"DRAFT\",\r\n    \"correct\": false,\r\n    \"questionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-keywords-outerjoin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"OUTER JOIN\",\r\n    \"correct\": true,\r\n    \"questionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-keywords-erase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"ERASE\",\r\n    \"correct\": false,\r\n    \"questionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-keywords-sort",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"SORT\",\r\n    \"correct\": true,\r\n    \"questionId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-create-create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"CREATE TABLE\",\r\n    \"correct\": true,\r\n    \"questionId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-create-setup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"SETUP TABLE\",\r\n    \"correct\": false,\r\n    \"questionId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-create-produce",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"PRODUCE TABLE\",\r\n    \"correct\": false,\r\n    \"questionId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-create-make",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"MAKE TABLE\",\r\n    \"correct\": false,\r\n    \"questionId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-drop-delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Delete a table called customers\",\r\n    \"correct\": true,\r\n    \"questionId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-drop-create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Create a table called customers\",\r\n    \"correct\": false,\r\n    \"questionId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create SQL-drop-check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Check if a table called customers exists\",\r\n    \"correct\": false,\r\n    \"questionId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-language-markup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"A markup language\",\r\n    \"correct\": true,\r\n    \"questionId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-language-programming",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"A programming language\",\r\n    \"correct\": false,\r\n    \"questionId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-language-stylesheet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"A programming language\",\r\n    \"correct\": false,\r\n    \"questionId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-language-human",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"A human language\",\r\n    \"correct\": false,\r\n    \"questionId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-tag-html",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"<html>\",\r\n    \"correct\": true,\r\n    \"questionId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-tag-body",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"<body>\",\r\n    \"correct\": false,\r\n    \"questionId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-tag-head",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"<head>\",\r\n    \"correct\": false,\r\n    \"questionId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create HTML-tag-all",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"<all>\",\r\n    \"correct\": false,\r\n    \"questionId\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create CSS-stylesheet-yes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"Yes it is\",\r\n    \"correct\": true,\r\n    \"questionId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers/create CSS-stylesheet-no",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wording\": \"No it isn't\",\r\n    \"correct\": false,\r\n    \"questionId\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/answers/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/answers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(39);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/answers",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"answers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/progresses",
+			"item": [
+				{
+					"name": "/api/progresses/create intern1quiz1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 4,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern1quiz2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 4,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern2quiz2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 5,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern2quiz4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 5,\r\n    \"quizId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern3quiz1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 6,\r\n    \"quizId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern4quiz2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 7,\r\n    \"quizId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses/create intern4quiz3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateAndTimeOfCompletion\": null,\r\n    \"score\": 0,\r\n    \"personId\": 7,\r\n    \"quizId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/progresses/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/progresses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(7);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/progresses",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"progresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api/records",
+			"item": [
+				{
+					"name": "/api/records/create intern1quiz1question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 1,\r\n\t\"progressId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern1quiz1question2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 2,\r\n\t\"progressId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern1quiz1question3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 3,\r\n\t\"progressId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern1quiz1question4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 4,\r\n\t\"progressId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern1quiz2question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 5,\r\n\t\"progressId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern1quiz2question2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 6,\r\n\t\"progressId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern2quiz2question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 5,\r\n\t\"progressId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern2quiz2question2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 6,\r\n\t\"progressId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern2quiz2question3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 7,\r\n\t\"progressId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern2quiz4question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 10,\r\n\t\"progressId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern3quiz1question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 1,\r\n\t\"progressId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern3quiz1question2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": true,\r\n\t\"questionId\": 2,\r\n\t\"progressId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern3quiz1question3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 3,\r\n\t\"progressId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records/create intern4quiz2question1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"success\": false,\r\n\t\"questionId\": 5,\r\n\t\"progressId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/records/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/records",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code = 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Header attribute Content-Type = application/json\", function () {\r",
+									"    var responseData = pm.response.headers;\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    var attributeToTest = responseData.get(\"Content-Type\");\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The list returned is not empty\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var attributeToTest = jsonData.length;\r",
+									"    console.info(attributeToTest);\r",
+									"    pm.expect(attributeToTest).to.eql(14);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/records",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"records"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
