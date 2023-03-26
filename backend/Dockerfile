@@ -1,7 +1,9 @@
 FROM amazoncorretto:17.0.6
 
-MAINTAINER realraec.xyz
+MAINTAINER azerty.com
 
-COPY quizgame-0.0.1-SNAPSHOT.jar quizgame-0.0.1-SNAPSHOT.jar
+WORKDIR /usr/app
 
-ENTRYPOINT ["java","-jar","/quizgame-0.0.1-SNAPSHOT.jar"]
+COPY quizgame-0.0.1-SNAPSHOT.jar .
+
+ENTRYPOINT ["java","-jar","quizgame-0.0.1-SNAPSHOT.jar"]
