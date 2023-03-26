@@ -1,5 +1,7 @@
 FROM postman/newman:latest
 
-MAINTAINER realraec.xyz
+MAINTAINER azerty.com
+
+WORKDIR /usr/app
 
 COPY initialization.json .

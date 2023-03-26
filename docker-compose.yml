@@ -12,7 +12,7 @@ services:
       - 5432:5432
     user: postgres
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
+      test: [ "CMD-SHELL", "pg_isready" ]
       start_period: 5s
       interval: 2s
       retries: 15
@@ -35,7 +35,7 @@ services:
   quizgame-initialization:
     build: ./initialization
     command:
-      run initialization.json
+      run /usr/app/initialization.json
       --env-var "URL=http://quizgame-backend:8080"
       -r cli,json
       --reporter-json-export="reports/initialization-report.json"
@@ -53,6 +53,3 @@ services:
     ports:
       - 4200:4200
     command: bash -c "cd /usr/app && npm install && npm start"
-    depends_on:
-      quizgame-initialization:
-        condition: service_completed_successfully
