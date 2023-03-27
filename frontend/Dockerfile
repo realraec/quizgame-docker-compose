@@ -5,4 +5,4 @@ MAINTAINER azerty.com
 WORKDIR /usr/app
 
 RUN git clone https://github.com/realraec/quizgame-frontend.git .
-RUN git pull && git checkout docker-tests
+RUN git pull && git checkout main
