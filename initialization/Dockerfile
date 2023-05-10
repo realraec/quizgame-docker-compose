@@ -1,6 +1,6 @@
-FROM postman/newman:latest
+FROM postman/newman:5.3.1
 
-MAINTAINER azerty.com
+LABEL maintainer="realraec.xyz"
 
 WORKDIR /usr/app
 

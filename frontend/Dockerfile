@@ -1,6 +1,6 @@
 FROM node:16.19.1
 
-MAINTAINER azerty.com
+LABEL maintainer="realraec.xyz"
 
 WORKDIR /usr/app
 
