@@ -1,6 +1,6 @@
 FROM amazoncorretto:17.0.6
 
-MAINTAINER azerty.com
+LABEL maintainer="realraec.xyz"
 
 WORKDIR /usr/app
 
