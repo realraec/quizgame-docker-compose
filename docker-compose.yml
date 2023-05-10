@@ -1,26 +1,23 @@
 version: '3'
-
 services:
 
   quizgame-database:
     build: ./database
-    environment:
-      - POSTGRES_DB=db
-      - POSTGRES_USERNAME=postgres
-      - POSTGRES_PASSWORD=321password
+    env_file:
+      - ./.env
     ports:
       - 5432:5432
     user: postgres
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready" ]
+      test: pg_isready
       start_period: 5s
       interval: 2s
       retries: 15
 
   quizgame-backend:
     build: ./backend
-    environment:
-      - DB_SERVICE=quizgame-database
+    env_file:
+      - ./.env
     ports:
       - 8080:8080
     depends_on:
@@ -47,9 +44,10 @@ services:
       start_period: 5s
       interval: 2s
       retries: 15
+    profiles:
+      - init
 
   quizgame-frontend:
     build: ./frontend
     ports:
       - 4200:4200
-    command: bash -c "cd /usr/app && npm install && npm start"

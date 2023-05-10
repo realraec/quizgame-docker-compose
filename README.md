@@ -1,7 +1,5 @@
 # Installation manual
 
-
-
 ## Foreword
 
 This project is the Docker Compose part of the QuizGame application. This is the right project you are supposed to install to start the entirety of the application all at once. We strongly discourage you to follow the installation manuals on the other projects, but here are the links for them if you want to check them out -- their README might be of interest to you:
@@ -9,7 +7,7 @@ This project is the Docker Compose part of the QuizGame application. This is the
 - https://github.com/realraec/quizgame-backend
 - https://github.com/realraec/quizgame-frontend
 
-
+---
 
 ## Prerequisites
 
@@ -20,37 +18,45 @@ The first five steps might be skippable -- depending on whether you have already
   
 * All the commands thereafter will have to be typed in Windows Terminal, in the WSL environment you must have set up in order to have Docker for Windows. (The actual tutorial for WSL2 alone is to be found here, but please follow the previous link instead : https://learn.microsoft.com/en-us/windows/wsl/install )
 
-* Start Docker Compose:
+* 0.1 | Start Docker Desktop by double clicking the icon, or do:
 
   ```
   start docker-desktop
   ```
 
-With this done, you should be able to follow the next steps to get a functional backend application running.
+With this done, you should be able to follow the next steps to get a functional application running.
 
+---
 
+## Starting the app for the first time
 
-## The app itself
-
-* Clone this repository:
+* 1.1 | Clone this repository:
 
   ```
   git clone https://github.com/realraec/quizgame-docker-compose.git .
   ```
 
-* Navigate your way to the root of the application:
+* 1.2 | Navigate your way to the root of the application:
 
   ```
   cd ./quizgame-docker-compose
   ```
 
-* Start everything at once based on the `docker-compose.yml` file:
+* 1.3 | If you wish to use other credentials as the ones provided by default, or configure the variable environments differently, open the `.env.sample` file at the root of the project, override any environment variable you want (without simple or double quotes), and save the file as `.env` -- it is very important that you give the file this name, or else it will not be taken into account at all.
+
+* 1.4 | Build the images before creating containers:
 
   ```
-  docker-compose up
+  docker compose build --no-cache
+  ```
+
+* 1.5 | Start everything at once based on the `docker-compose.yml` file:
+
+  ```
+  docker compose --profile=init up
   ```
   
-* Wait until you get the following line -- this is not a command:
+* 1.6 | Wait until you get the following line -- this is not a command:
 
   ```
   ** Angular Live Development Server is listening on 0.0.0.0:4200, open your browser on http://localhost:4200/ **
@@ -72,24 +78,38 @@ Use any of the following accounts (using their username and password -- note tha
   intern11 - P@ssW0rd8
   intern12 - P@ssW0rd9
 
+---
 
+## Exiting, restarting, keeping changes or not
 
-## Known bugs and workarounds
+* 2.1 | To stop the containers currently running, press Ctrl+C, and to restart them without losing any of your progress (since the database is now populated with your own data, too), do:
 
-* If you wish to reset the process and start from scratch (usually after freeing ports or killing a concurrent DBMS service), try :
+  ```
+  docker compose down
+  docker compose up
+  ```
+
+* 2.2 | If you want to delete everything in your database and start over with a cleanly-populated database, do -- but notice the use of the `-` character in `docker-compose`:
 
   ```
   docker-compose down --volumes
-  docker-compose up --build --force-recreate
+  docker-compose --profile=init up --build --force-recreate
   ```
 
-* If for some reason you do not have the latest version of the frontend part of the app (based on a distant repository), try:
+---
 
+## Known bugs and workarounds
+
+* 3.1 | If you are facing an issue the solution to which seems to be freeing ports, killing a concurrent DBMS service, or restarting a Docker network, you might have to perform a hard reset; see 2.2.
+
+* 3.2 | If you do not have the latest version of either the frontend or backend part of the app (which are based on distant repositories unlike the other services) OR if you wish to change the log level for the backend part fo the application (see 1.3), you will have to rebuild the images; see 1.4.
+
+* 3.3 | If you cannot configure the database from your CLI, open pgAdmin4 or any other management tool for PostgreSQL, query your main database (right click > query tool), and try:
+
+  ```sql
+  CREATE USER ${DB_USERNAME:dev};
+  ALTER USER ${DB_USERNAME:dev} WITH ENCRYPTED PASSWORD '${DB_PASSWORD:password123}';
+  CREATE DATABASE ${DB_NAME:quizgame} WITH OWNER ${DB_USERNAME:dev};
   ```
-  docker compose build --no-cache
-  ```
 
-* If you cannot configure the database from your CLI, open pgAdmin4 or any other management tool for PostgreSQL, query your main database (right click > query tool), and try:
-
-* If you encounter a problem and all else fails, please feel free to reach out to any of the contributors of the project -- the one in charge of the Dockerizing being Pierre CHIMOT, he might be able to help you better.
-
+* If you encounter a problem and all else fails, please feel free to reach out to any of the contributors of the project -- the owner being [realraec](mailto:realraec@gmail.com).

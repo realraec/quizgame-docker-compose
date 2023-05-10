@@ -5,4 +5,6 @@ LABEL maintainer="realraec.xyz"
 WORKDIR /usr/app
 
 RUN git clone https://github.com/realraec/quizgame-frontend.git .
-RUN git pull && git checkout main
+RUN npm install
+
+ENTRYPOINT npm start
